@@ -18,17 +18,17 @@ func linearSearch(a []int, val int) bool {
 }
 
 func binarySearch(a []int, val int) bool {
-	hi := len(a)
+	hi := len(a) - 1
 	lo := 0
 	for {
-		if lo < hi {
+		if lo <= hi {
 			m := lo + (hi-lo)/2
 			v := a[m]
 			fmt.Println("hi: ", hi, "lo: ", lo, "m: ", m, "v: ", v)
 			if v == val {
 				return true
 			} else if v > val {
-				hi = m //since v is midpoint value
+				hi = m - 1
 			} else {
 				lo = m + 1
 			}
